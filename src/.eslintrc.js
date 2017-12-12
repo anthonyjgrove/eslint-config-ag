@@ -30,7 +30,10 @@ module.exports =
     "node": true,
     "jasmine": true,
     "jest": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "mocha": true,
+    "shelljs": true,
+    "commonjs": true
   },
   "globals": {
     "fetch": true,
@@ -44,46 +47,42 @@ module.exports =
     "ecmaVersion": 2017,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "modules": true
     }
   },
   "rules": {
     "prettier/prettier": [
       "error",
       {
-        "trailingComma": "all",
-        "bracketSpacing": false
+        "useTabs": false,
+        "printWidth": 200,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "none",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "semi": false
       }
     ],
     "newline-before-return": "error",
-    "no-use-before-define": [
-      "error",
+    "no-unused-vars": 2,
+    "no-var": 2,
+    "prefer-const": 2,
+    "no-console": 2,
+    "camelcase": 0,
+    "react/no-unused-prop-types": 2,
+    "react/jsx-filename-extension": [
+      1,
       {
-        "functions": false,
-        "classes": false,
-        "variables": true
+        "extensions": [
+          ".js.",
+          ".jsx"
+        ]
       }
     ],
-    "no-unused-vars": 1,
-    "react/no-unused-prop-types": 1,
-    "yoda": [
-      "error",
-      "never",
-      {
-        "exceptRange": true
-      }
-    ],
-    "curly": [
-      "error",
-      "all"
-    ],
-    "import/prefer-default-export": 0,
-    "import/first": 0,
-    "no-console": "warn",
-    "no-debugger": "warn",
-    "react/jsx-filename-extension": 0,
-    "react/prefer-stateless-function": "warn",
     "react/require-default-props": 0,
+    "react/prop-types": 0,
     "jsx-a11y/href-no-hash": "off"
   }
 }

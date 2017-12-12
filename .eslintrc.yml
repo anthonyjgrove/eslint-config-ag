@@ -3,15 +3,15 @@ root: true
 
 parser: babel-eslint
 extends:
-  # https://github.com/yannickcr/eslint-plugin-react
+  # https:#github.com/yannickcr/eslint-plugin-react
   - plugin:react/recommended
-  # https://github.com/gajus/eslint-plugin-flowtype
+  # https:#github.com/gajus/eslint-plugin-flowtype
   - plugin:flowtype/recommended
-  # https://www.npmjs.com/package/eslint-plugin-jest
+  # https:#www.npmjs.com/package/eslint-plugin-jest
   - plugin:jest/recommended
-  # https://www.npmjs.com/package/eslint-config-airbnb-base
+  # https:#www.npmjs.com/package/eslint-config-airbnb-base
   - airbnb
-  # https://github.com/prettier/eslint-config-prettier
+  # https:#github.com/prettier/eslint-config-prettier
   - prettier
   - prettier/flowtype
   - prettier/react
@@ -21,7 +21,7 @@ plugins:
   - import
   - jest
   - flowtype
-  # https://github.com/prettier/eslint-plugin-prettier
+  # https:#github.com/prettier/eslint-plugin-prettier
   - prettier
 
 settings:
@@ -36,7 +36,9 @@ env:
   jasmine: true
   jest: true
   jest/globals: true
-
+  mocha: true
+  shelljs: true
+  commonjs: true
 globals:
   fetch: true
   navigator: true
@@ -50,76 +52,51 @@ parserOptions:
   sourceType: module
   ecmaFeatures:
     jsx: true
-
+    modules: true
 rules:
   prettier/prettier:
     - error
     -
-      trailingComma: all
-      bracketSpacing: false
+      useTabs: false
+      # Fit code within this line limit
+      printWidth: 200
+      # Number of spaces it should use per tab
+      tabWidth: 2
+      # If true will use single instead of double quotes
+      singleQuote: true
+      # Controls the printing of trailing commas wherever possible. Valid options:
+      # none - No trailing commas
+      # es5  - Trailing commas where valid in ES5 (objects arrays etc)
+      # all  - Trailing commas wherever possible (function arguments)
+      trailingComma: none
+      # Controls the printing of spaces inside object literals
+      bracketSpacing: true
+      # If true puts the `>` of a multi-line jsx element at the end of
+      # the last line instead of being alone on the next line
+      jsxBracketSameLine: false
+      # Which parser to use. Valid options are 'flow' and 'babylon'
+      # Whether to add a semicolon at the end of every line (semi: true)
+      # or only at the beginning of lines that may introduce ASI failures (semi: false)
+      semi: false
 
-  ### Different from airbnb config
+  ### Different from default airbnb config
 
   ### Styling ###
+  newline-before-return: error
+  no-unused-vars: 2
+  no-var: 2
+  prefer-const: 2
+  no-console: 2
+  # semi-spacing: 2
+  camelcase: 0
+  # indent: [error, 2]
 
-  # Prefer new line before return
-  # http://eslint.org/docs/rules/newline-before-return
-  newline-before-return: error # airbnb default: off
+  # react
+  react/no-unused-prop-types: 2
+  react/jsx-filename-extension: [1, { extensions: [.js., .jsx] }]
+  react/require-default-props: 0
+  react/prop-types: 0
 
-  ### Variables ###
-
-  # Functions and classes can be used before declaration
-  # http://eslint.org/docs/rules/no-use-before-define
-  no-use-before-define: # airbnb default: ['error', { functions: true, classes: true, variables: true }]
-    - error
-    -
-      functions: false
-      classes: false
-      variables: true
-
-  ### From error to warning ###
-  # was not working when used with flow prop types
-  no-unused-vars: 1
-  react/no-unused-prop-types: 1
-
-  ### ES6 ###
-
-  ### Best practices ###
-  # require or disallow Yoda conditions
-  # https://eslint.org/docs/rules/yoda
-  yoda: [error, never, { exceptRange: true }] # airbnb default: 'error'
-
-  # add culry braces all the time
-  # https://eslint.org/docs/rules/curly
-  curly: [error, all] # airbnb default: [error, multi-line]
-
-  ### Import ###
-
-  # Require modules with a single export to use a default export
-  # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
-  import/prefer-default-export: 0 # airbnb default: 'error'
-
-  # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/imports-first.md
-  import/first: 0 # airbnb default: ['error', 'absolute-first']
-
-  ### Debugging is allowed but not allowed to commit ###
-  no-console: warn # airbnb default: 'error'
-  no-debugger: warn # airbnb default: 'error'
-
-  ### React ###
-  # do not force jsx use js
-  # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
-  react/jsx-filename-extension: 0
-
-  # Require stateless functions when not using lifecycle methods, setState or ref
-  # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
-  react/prefer-stateless-function: warn # airbnb default: 'error'
-
-  # Enforce a defaultProps definition for every prop that is not a required prop
-  # reason: function composition over default props
-  # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
-  react/require-default-props: 0 # airbnb default: 'error'
-
-  ### Removed rules
-  # no longer defined
+  #jsx-a11y
   jsx-a11y/href-no-hash: off
+
