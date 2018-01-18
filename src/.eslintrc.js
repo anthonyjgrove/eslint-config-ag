@@ -56,7 +56,7 @@ module.exports =
       "error",
       {
         "useTabs": false,
-        "printWidth": 200,
+        "printWidth": 150,
         "tabWidth": 2,
         "singleQuote": true,
         "trailingComma": "none",

@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-ag",
   "description": "Eslint config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Anthony Grove <https://github.com/anthonyjgrove>",
   "main": "src/.eslintrc.js",
   "repository": {
@@ -19,7 +19,7 @@
     "lint": "eslint . --cache",
     "lint:fix": "npm run lint --fix",
     "lint:staged": "npm run lint:fix -- --rule no-console:2 --rule no-debugger:2",
-    "precommit": "npm run run eslintrc:prepare && lint-staged",
+    "precommit": "npm run eslintrc:prepare && lint-staged",
     "prepush": "npm run test",
     "eslintrc:check:yml": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
     "eslintrc:yml-to-js": "echo '// generated file from .eslintrc.yml\nmodule.exports =' > src/.eslintrc.js && js-yaml .eslintrc.yml >> src/.eslintrc.js",

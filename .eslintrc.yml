@@ -59,7 +59,7 @@ rules:
     -
       useTabs: false
       # Fit code within this line limit
-      printWidth: 200
+      printWidth: 150
       # Number of spaces it should use per tab
       tabWidth: 2
       # If true will use single instead of double quotes
