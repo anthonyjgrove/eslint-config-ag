@@ -3,15 +3,15 @@ root: true
 
 parser: babel-eslint
 extends:
-  # https:#github.com/yannickcr/eslint-plugin-react
+  # https://github.com/yannickcr/eslint-plugin-react
   - plugin:react/recommended
-  # https:#github.com/gajus/eslint-plugin-flowtype
+  # https://github.com/gajus/eslint-plugin-flowtype
   - plugin:flowtype/recommended
-  # https:#www.npmjs.com/package/eslint-plugin-jest
+  # https://www.npmjs.com/package/eslint-plugin-jest
   - plugin:jest/recommended
-  # https:#www.npmjs.com/package/eslint-config-airbnb-base
+  # https://www.npmjs.com/package/eslint-config-airbnb-base
   - airbnb
-  # https:#github.com/prettier/eslint-config-prettier
+  # https://github.com/prettier/eslint-config-prettier
   - prettier
   - prettier/flowtype
   - prettier/react
@@ -21,8 +21,9 @@ plugins:
   - import
   - jest
   - flowtype
-  # https:#github.com/prettier/eslint-plugin-prettier
+  # https://github.com/prettier/eslint-plugin-prettier
   - prettier
+  - better-mutation
 
 settings:
   flowtype:
@@ -39,6 +40,7 @@ env:
   mocha: true
   shelljs: true
   commonjs: true
+
 globals:
   fetch: true
   navigator: true
@@ -52,7 +54,7 @@ parserOptions:
   sourceType: module
   ecmaFeatures:
     jsx: true
-    modules: true
+
 rules:
   prettier/prettier:
     - error
@@ -90,13 +92,17 @@ rules:
   # semi-spacing: 2
   camelcase: 0
   # indent: [error, 2]
+  curly: [error, all] # airbnb default: [error, multi-line]
 
   # react
   react/no-unused-prop-types: 2
-  react/jsx-filename-extension: [1, { extensions: [.js., .jsx] }]
+  react/jsx-filename-extension: 0
   react/require-default-props: 0
   react/prop-types: 0
 
-  #jsx-a11y
-  jsx-a11y/href-no-hash: off
+  # jsx-a11y
+
+  # functional programming
+  better-mutation/no-mutating-functions: 2
+  better-mutation/no-mutating-methods: 2
 

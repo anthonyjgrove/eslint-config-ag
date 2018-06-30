@@ -1,13 +1,16 @@
 {
   "plugins": ["babel-plugin-styled-components"],
   "presets": [
-    ["env", {
-      "targets": {
-        "node": "current",
-        "browsers": ["last 2 versions"]
-      },
-      "include": [],
-      "exclude": []
-    }]
+    [
+      "env",
+      {
+        "targets": {
+          "node": "current",
+          "browsers": ["last 2 versions"]
+        },
+        "include": [],
+        "exclude": []
+      }
+    ]
   ]
 }

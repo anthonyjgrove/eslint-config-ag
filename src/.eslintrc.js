@@ -17,7 +17,8 @@ module.exports =
     "import",
     "jest",
     "flowtype",
-    "prettier"
+    "prettier",
+    "better-mutation"
   ],
   "settings": {
     "flowtype": {
@@ -47,8 +48,7 @@ module.exports =
     "ecmaVersion": 2017,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true,
-      "modules": true
+      "jsx": true
     }
   },
   "rules": {
@@ -71,18 +71,15 @@ module.exports =
     "prefer-const": 2,
     "no-console": 2,
     "camelcase": 0,
-    "react/no-unused-prop-types": 2,
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".js.",
-          ".jsx"
-        ]
-      }
+    "curly": [
+      "error",
+      "all"
     ],
+    "react/no-unused-prop-types": 2,
+    "react/jsx-filename-extension": 0,
     "react/require-default-props": 0,
     "react/prop-types": 0,
-    "jsx-a11y/href-no-hash": "off"
+    "better-mutation/no-mutating-functions": 2,
+    "better-mutation/no-mutating-methods": 2
   }
 }

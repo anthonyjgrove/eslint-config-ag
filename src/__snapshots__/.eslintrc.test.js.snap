@@ -3,7 +3,7 @@
 exports[`Eslint rules will output same markup match 1`] = `
 "// @flow
 // eslint-disable-next-line
-import React from 'react'
+import React from \\"react\\"
 
 /* eslint-disable no-unused-vars */
 
@@ -15,7 +15,9 @@ const ComponentTreeProp = (one, two, tree) => <input one={one} two={two} tree={t
 const ComponentFourProp = (one, two, tree, four) => <input one={one} two={two} tree={tree} four={four} />
 const ComponentFiveProp = (one, two, tree, four, five) => <input one={one} two={two} tree={tree} four={four} five={five} />
 const ComponentSixProp = (one, two, tree, four, five, six) => <input one={one} two={two} tree={tree} four={four} five={five} six={six} />
-const ComponentSevenProp = (one, two, tree, four, five, six, seven) => <input one={one} two={two} tree={tree} four={four} five={five} six={six} seven={seven} />
+const ComponentSevenProp = (one, two, tree, four, five, six, seven) => (
+  <input one={one} two={two} tree={tree} four={four} five={five} six={six} seven={seven} />
+)
 
 const ComponentText0 = () => <input text=\\"some text\\" />
 const ComponentText1 = () => <input text=\\"some text\\" />
@@ -50,6 +52,19 @@ function testNewLineBeforeReturn(z) {
   return y
 }
 
+function testIfState(z) {
+  if (z) {
+    return z + 1
+  }
+
+  return z
+}
+const test = {}
+
+Object.assign(test, { test: 1 })
+
+const myArrow = () => 1 + 1
+
 type X = { x: string }
 
 type Y = {
@@ -59,6 +74,12 @@ type Y = {
 type XY = X & Y
 type XYZ = XY & { z: string }
 
+const handleSizeValue = 1
+const percentage = 1
+
+const offset = (handleSizeValue / 2) * (1 - percentage / 0.5)
+
+export default (dividend: number, divisor: number): number => ((dividend % divisor) + divisor) % divisor
 /* eslint-enable no-unused-vars */
 "
 `;
