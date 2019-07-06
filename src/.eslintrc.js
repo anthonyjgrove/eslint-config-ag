@@ -18,7 +18,8 @@ module.exports =
     "jest",
     "flowtype",
     "prettier",
-    "better-mutation"
+    "better-mutation",
+    "react-hooks"
   ],
   "settings": {
     "flowtype": {
@@ -79,6 +80,8 @@ module.exports =
     "react/jsx-filename-extension": 0,
     "react/require-default-props": 0,
     "react/prop-types": 0,
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1,
     "better-mutation/no-mutating-functions": 2,
     "better-mutation/no-mutating-methods": 2
   }

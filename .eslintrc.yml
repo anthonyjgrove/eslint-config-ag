@@ -24,6 +24,8 @@ plugins:
   # https://github.com/prettier/eslint-plugin-prettier
   - prettier
   - better-mutation
+  # https://www.npmjs.com/package/eslint-plugin-react-hooks
+  - react-hooks
 
 settings:
   flowtype:
@@ -100,9 +102,14 @@ rules:
   react/require-default-props: 0
   react/prop-types: 0
 
+  react-hooks/rules-of-hooks: 2
+  react-hooks/exhaustive-deps: 1
+
   # jsx-a11y
 
   # functional programming
   better-mutation/no-mutating-functions: 2
   better-mutation/no-mutating-methods: 2
+
+
 
