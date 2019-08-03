@@ -11,12 +11,12 @@ const ComponentZeroProp = () => <input />
 const ComponentZeroProp1 = () => <div />
 const ComponentOneProp = one => <input one={one} />
 const ComponentTwoProp = (one, two) => <input one={one} two={two} />
-const ComponentTreeProp = (one, two, tree) => <input one={one} two={two} tree={tree} />
-const ComponentFourProp = (one, two, tree, four) => <input one={one} two={two} tree={tree} four={four} />
-const ComponentFiveProp = (one, two, tree, four, five) => <input one={one} two={two} tree={tree} four={four} five={five} />
-const ComponentSixProp = (one, two, tree, four, five, six) => <input one={one} two={two} tree={tree} four={four} five={five} six={six} />
+const ComponentTreeProp = (one, two, tree) => <input one={one} tree={tree} two={two} />
+const ComponentFourProp = (one, two, tree, four) => <input four={four} one={one} tree={tree} two={two} />
+const ComponentFiveProp = (one, two, tree, four, five) => <input five={five} four={four} one={one} tree={tree} two={two} />
+const ComponentSixProp = (one, two, tree, four, five, six) => <input five={five} four={four} one={one} six={six} tree={tree} two={two} />
 const ComponentSevenProp = (one, two, tree, four, five, six, seven) => (
-  <input one={one} two={two} tree={tree} four={four} five={five} six={six} seven={seven} />
+  <input five={five} four={four} one={one} seven={seven} six={six} tree={tree} two={two} />
 )
 
 const ComponentText0 = () => <input text=\\"some text\\" />
