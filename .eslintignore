@@ -5,5 +5,5 @@ dist/**
 .next/**
 .vscode/**
 .idea/**
-
-src/test-markup.js
+node_modules/**
+__test__/test-markup.ts
