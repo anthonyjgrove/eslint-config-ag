@@ -24,6 +24,7 @@ const globalRules = {
   curly: ['error', 'all'],
   'quote-props': ['error', 'as-needed'],
   'comma-dangle': ['error', 'never'],
+  'object-curly-newline': 'off', // use prettier instead
   semi: ['error', 'never'],
   'max-len': ['error', { code: 150 }],
   'import/no-extraneous-dependencies': [
