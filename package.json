@@ -24,6 +24,7 @@
     "precommit": "npm run eslintrc:prepare && lint-staged",
     "prepush": "npm test",
     "pretest": "npm run test-output:prepare",
+    "prepublish": "npm run lint && npm run test && npm run test:coverage && npm run release-patch",
     "release-patch": "npm version patch -m \"Upgrade to %s\" && npm publish",
     "release-minor": "npm version minor -m \"Upgrade to %s\" && npm publish",
     "release-major": "npm version major -m \"Upgrade to %s\" && npm publish",
