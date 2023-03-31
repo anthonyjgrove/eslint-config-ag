@@ -22,5 +22,10 @@
     ],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.js",
+    ".eslintrc.js"
+  ]
 }
