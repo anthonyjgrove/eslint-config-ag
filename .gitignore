@@ -232,4 +232,4 @@ $RECYCLE.BIN/
 
 /flow-typed/npm
 flow-coverage
-src/test-markup.output.js
+__test__/test-markup.output.ts
