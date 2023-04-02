@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-ag",
   "description": "Eslint config",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "author": "Anthony Grove <https://github.com/anthonyjgrove>",
   "main": ".eslintrc.js",
   "repository": {
