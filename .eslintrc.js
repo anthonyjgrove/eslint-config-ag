@@ -27,6 +27,7 @@ const globalRules = {
   'object-curly-newline': 'off', // use prettier instead
   semi: ['error', 'never'],
   'max-len': ['error', { code: 150 }],
+  'implicit-arrow-linebreak': 'off', // use prettier instead
   'import/no-extraneous-dependencies': [
     'error',
     {
